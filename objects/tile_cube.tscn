@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://ntoh8bero2ib"]
+[gd_scene load_steps=5 format=3 uid="uid://ntoh8bero2ib"]
 
 [ext_resource type="Script" uid="uid://dbt0scsjsv7ab" path="res://scripts/ground_cube.gd" id="1_jtetq"]
+[ext_resource type="Texture2D" uid="uid://bvhtxxi3fu3rc" path="res://atlas/glow/ground1.tres" id="2_kione"]
 [ext_resource type="Texture2D" uid="uid://cibkkh7064rkc" path="res://atlas/tiles/ground1.tres" id="2_t64kn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b1kto"]
@@ -12,10 +13,11 @@ script = ExtResource("1_jtetq")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_b1kto")
 
-[node name="Texture" type="TextureRect" parent="."]
-offset_left = -32.0
-offset_top = -32.0
-offset_right = 32.0
-offset_bottom = 32.0
-pivot_offset = Vector2(32, 32)
+[node name="Glow" type="Sprite2D" parent="."]
+position = Vector2(0.9999968, 1.66893e-06)
+scale = Vector2(1.1111112, 1.1219512)
+texture = ExtResource("2_kione")
+
+[node name="Texture" type="Sprite2D" parent="."]
+scale = Vector2(1.0491803, 1.0491803)
 texture = ExtResource("2_t64kn")

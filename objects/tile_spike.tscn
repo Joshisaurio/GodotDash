@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://pxkblm5rvh3j"]
+[gd_scene load_steps=6 format=3 uid="uid://pxkblm5rvh3j"]
 
 [ext_resource type="Script" uid="uid://ctvjwkqd01dl1" path="res://scripts/tile_spike.gd" id="1_ungao"]
 [ext_resource type="Texture2D" uid="uid://cgpa8heoa28n1" path="res://hitboxes.webp" id="2_ungao"]
+[ext_resource type="Texture2D" uid="uid://bf1gr115y672g" path="res://atlas/glow/spike1.tres" id="3_807ws"]
 [ext_resource type="Texture2D" uid="uid://deku2gtcxftba" path="res://atlas/tiles/spike1.tres" id="3_ungao"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b1kto"]
@@ -21,10 +22,10 @@ position = Vector2(0, 2.5)
 shape = SubResource("RectangleShape2D_b1kto")
 debug_color = Color(1, 0, 0, 0.419608)
 
-[node name="Texture" type="TextureRect" parent="."]
-offset_left = -32.0
-offset_top = -32.0
-offset_right = 32.0
-offset_bottom = 32.0
-pivot_offset = Vector2(32, 32)
+[node name="Glow" type="Sprite2D" parent="."]
+position = Vector2(-9.536743e-07, 3.730769)
+scale = Vector2(1.5384616, 1.5655271)
+texture = ExtResource("3_807ws")
+
+[node name="Texture" type="Sprite2D" parent="."]
 texture = ExtResource("3_ungao")

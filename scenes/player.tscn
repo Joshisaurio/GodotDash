@@ -37,6 +37,7 @@ limit_top = -568
 limit_bottom = 650
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+visible = false
 amount = 100
 texture = SubResource("GradientTexture2D_qhqgy")
 lifetime = 0.8
@@ -49,7 +50,9 @@ shape = SubResource("RectangleShape2D_g2els")
 debug_color = Color(1, 0, 0, 0.419608)
 
 [node name="Dead" type="Timer" parent="."]
+wait_time = 0.5
 one_shot = true
+ignore_time_scale = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_qhqgy")

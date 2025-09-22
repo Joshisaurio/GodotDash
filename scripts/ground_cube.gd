@@ -5,6 +5,7 @@ extends StaticBody2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Texture.texture = load("res://atlas/tiles/" + texture + ".tres")
+	$Glow.texture = load("res://atlas/glow/" + texture + ".tres")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://nkqcanr5pko6"]
+
+[ext_resource type="Script" uid="uid://ctvjwkqd01dl1" path="res://scripts/tile_spike.gd" id="1_qhtwx"]
+[ext_resource type="Texture2D" uid="uid://cgpa8heoa28n1" path="res://hitboxes.webp" id="2_eftqa"]
+[ext_resource type="Texture2D" uid="uid://cibkkh7064rkc" path="res://atlas/tiles/ground1.tres" id="2_y4kda"]
+[ext_resource type="Texture2D" uid="uid://ctyriado1cy6v" path="res://atlas/glow/small_spike1.tres" id="4_eftqa"]
+[ext_resource type="Texture2D" uid="uid://bdtpth5su1ltk" path="res://atlas/tiles/small_spike1.tres" id="5_eftqa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b1kto"]
+size = Vector2(12, 12)
+
+[node name="Small_spike" type="Area2D"]
+script = ExtResource("1_qhtwx")
+texture = "small_spike1"
+
+[node name="Gridreference" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(1.0491803, 1.0491803)
+texture = ExtResource("2_y4kda")
+
+[node name="Hitboxes" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-63, 9.53674e-07)
+scale = Vector2(1.20552, 1.20552)
+texture = ExtResource("2_eftqa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 20)
+shape = SubResource("RectangleShape2D_b1kto")
+debug_color = Color(1, 0, 0, 0.419608)
+
+[node name="Glow" type="Sprite2D" parent="."]
+position = Vector2(-9.536743e-07, 22.26923)
+scale = Vector2(0.95774645, 0.8758741)
+texture = ExtResource("4_eftqa")
+
+[node name="Texture" type="Sprite2D" parent="."]
+position = Vector2(0, 18.53846)
+texture = ExtResource("5_eftqa")

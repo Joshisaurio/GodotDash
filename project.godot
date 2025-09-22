@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Godot Dash"
 run/main_scene="uid://c86mjr6icup3n"
-config/features=PackedStringArray("4.4", "Mobile")
+config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
 
 [display]
