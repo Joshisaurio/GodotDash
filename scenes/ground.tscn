@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dr034yhpb7pgq"]
+
+[ext_resource type="Script" uid="uid://clspgc7pcj136" path="res://scripts/ground.gd" id="1_pybca"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ylpw"]
+size = Vector2(90, 24)
+
+[node name="Ground" type="StaticBody2D"]
+script = ExtResource("1_pybca")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 12)
+shape = SubResource("RectangleShape2D_7ylpw")

@@ -1,12 +1,26 @@
-[gd_scene load_steps=4 format=3 uid="uid://dsu6quh2x6xdd"]
+[gd_scene load_steps=8 format=3 uid="uid://dsu6quh2x6xdd"]
 
 [ext_resource type="Texture2D" uid="uid://dycn4ndtarbsg" path="res://assets/cube_1(1).png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://rihlgmb325ha" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="AudioStream" uid="uid://gdrun56qrfbf" path="res://music/500476_Stereo-Madness.mp3" id="3_qhqgy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3vyb7"]
-size = Vector2(64, 64)
+size = Vector2(58, 58)
 
-[node name="Player" type="CharacterBody2D"]
+[sub_resource type="Gradient" id="Gradient_g2els"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qhqgy"]
+gradient = SubResource("Gradient_g2els")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.463303, 0.509174)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
+size = Vector2(18, 18)
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+floor_block_on_wall = false
 script = ExtResource("1_g2els")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -21,3 +35,24 @@ position = Vector2(316, 0)
 limit_left = 0
 limit_top = -568
 limit_bottom = 650
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 100
+texture = SubResource("GradientTexture2D_qhqgy")
+lifetime = 0.8
+gravity = Vector2(0, 0)
+
+[node name="DamageHitbox" type="Area2D" parent="." groups=["damagehitbox"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageHitbox"]
+shape = SubResource("RectangleShape2D_g2els")
+debug_color = Color(1, 0, 0, 0.419608)
+
+[node name="Dead" type="Timer" parent="."]
+one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_qhqgy")
+autoplay = true
+
+[connection signal="timeout" from="Dead" to="." method="_on_dead_timeout"]
