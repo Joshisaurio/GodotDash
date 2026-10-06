@@ -1,2 +1,2 @@
 # GodotDash
- A faithful Geometry Dash clone made for fun. Original game by RobTop (please dont sue me robrob im just a kid)
+ A tiny, unfinished Geometry Dash clone made for fun on September 2025. Original game, assets, ideas, etc. by RobTop
